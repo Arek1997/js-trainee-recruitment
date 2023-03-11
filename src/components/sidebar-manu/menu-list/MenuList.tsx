@@ -1,20 +1,23 @@
+import { useObserverContext } from '@/context/ObserverContext';
+import { menuTitles } from '@/data/MenuTitles';
+import { useEffect, useState } from 'react';
 import MenuItem from '../menu-item/MenuItem';
 
-const linksTitles = [
-	'Polar Bear',
-	'Cheetah',
-	'Panda',
-	'Fox',
-	'Squirrel',
-	'Butterfly',
-	'Elephant',
-];
-
 const MenuList = () => {
+	const { activeSection } = useObserverContext();
+	const [activeLink, setActiveLink] = useState(activeSection);
+
+	useEffect(() => setActiveLink(activeSection), [activeSection]);
+
 	return (
 		<ul>
-			{linksTitles.map((link, index) => (
-				<MenuItem key={index} title={link} />
+			{menuTitles.map((link) => (
+				<MenuItem
+					key={Math.random() * 20 + link}
+					title={link}
+					activeLink={activeLink}
+					setActiveLink={setActiveLink}
+				/>
 			))}
 		</ul>
 	);
