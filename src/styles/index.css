@@ -1,6 +1,7 @@
 :root {
 	--active-color: #f97316;
 	--active-bg-color: rgba(238, 238, 238, 0.5);
+	scroll-behavior: smooth;
 }
 
 @tailwind base;
