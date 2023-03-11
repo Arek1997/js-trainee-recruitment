@@ -1,6 +1,16 @@
+:root {
+	--active-color: #f97316;
+	--active-bg-color: rgba(238, 238, 238, 0.5);
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.active {
+	color: var(--active-color);
+	background-color: var(--active-bg-color);
+}
 
 /* .wrapper {
 	margin: 15% auto;
