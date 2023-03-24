@@ -1,17 +1,11 @@
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
-import { LogoNerdbord } from "../components/LogoNerdbord";
-
-import styles from "../styles/index.module.css";
+import SidebarMenu from '@/components/sidebar-manu/SidebarMenu';
+import Slides from '@/components/slides/Slides';
 
 export default function Home() {
-  return (
-    <div className={styles.wrapper}>
-      <LogoNerdbord />
-      <h1 className={inter.className}>
-        Recruitment task for Javascript Trainee
-      </h1>
-    </div>
-  );
+	return (
+		<div className='my-[100px] mx-auto flex max-w-[1200px] gap-x-20 text-center'>
+			<SidebarMenu />
+			<Slides />
+		</div>
+	);
 }
